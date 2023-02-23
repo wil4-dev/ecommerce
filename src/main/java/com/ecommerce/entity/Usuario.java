@@ -1,7 +1,14 @@
 package com.ecommerce.entity;
 
-public class Usuario {
+import java.util.List;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="usuarios")
+public class Usuario {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private String nombre;
 	private String username;
@@ -10,6 +17,12 @@ public class Usuario {
 	private String telefono;
 	private String tipo;
 	private String password;
+	
+	@OneToMany(mappedBy = "usuario")
+	private List<Producto> productos;
+	
+	@OneToMany(mappedBy = "usuario")
+	private List<Orden> ordenes;
 	
 	public Usuario() {}
 	
@@ -73,6 +86,18 @@ public class Usuario {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public List<Producto> getProductos() {
+		return productos;
+	}
+	public void setProductos(List<Producto> productos) {
+		this.productos = productos;
+	}
+	public List<Orden> getOrdenes() {
+		return ordenes;
+	}
+	public void setOrdenes(List<Orden> ordenes) {
+		this.ordenes = ordenes;
 	}
 
 	@Override
