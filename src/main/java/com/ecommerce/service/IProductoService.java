@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import com.ecommerce.entity.Producto;
 
-public interface ProductoService {
+public interface IProductoService {
 
 	public Producto save (Producto producto);
 	

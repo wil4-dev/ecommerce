@@ -6,14 +6,14 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ecommerce.dao.ProductoDao;
+import com.ecommerce.dao.IProductoDao;
 import com.ecommerce.entity.Producto;
 
 @Service
-public class ProductoServiceImplement implements ProductoService{
+public class ProductoServiceImplement implements IProductoService{
 
 	@Autowired
-	private ProductoDao productoDao;
+	private IProductoDao productoDao;
 	
 	@Override
 	public Producto save(Producto producto) {
