@@ -18,7 +18,16 @@ public class UsuarioServiceImplement implements IUsuarioService{
 	public Optional<Usuario> findById(Integer id) {
 		return usuarioDao.findById(id);
 	}
-	
+
+	@Override
+	public Usuario save(Usuario usuario) {
+		return usuarioDao.save(usuario);
+	}
+
+	@Override
+	public Optional<Usuario> findByEmail(String email) {
+		return usuarioDao.findByEmail(email);
+	}
 	
 
 }
